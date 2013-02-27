@@ -1,10 +1,11 @@
 {
-    "name":"site-manager-baseline",
+    "name":"site-manager-backbone-io",
     "version":"0.10.3",
     "description":"Client-side UI for the Site-Manager applications",
     "keywords":["site", "html5", "mobile"],
     "contributors": [
-        "Joachim Kainz <jfk@jolira.com> (http://www.jolira.com)"
+        "Joachim Kainz <jfk@jolira.com> (http://www.jolira.com)",
+        "Gabe Hopper <gabe@jolira.com>"
     ],
     "repository":{
         "url":"https://github.com/jolira/site-manager-baseline.git",
@@ -16,7 +17,7 @@
         "jolira-bootstrap" : "*"
     },
     "devDependencies":{
-        "site-manager":"*",
+        "site-manager": "git://github.com/jolira/site-manager.git",
         "debug":"*",
         "horaa":"*",
         "vows":"*",

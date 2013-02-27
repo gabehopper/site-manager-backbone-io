@@ -3,7 +3,6 @@
     "use strict";
 
     var path = require("path"),
-        bootstrap = require("jolira-bootstrap"),
         templates = path.join(__dirname, "templates"),
         pubdir = path.join(__dirname, "public"),
         clientInit = require("./lib/client-init"),
@@ -13,18 +12,15 @@
     function addDefaults(defaults) {
         defaults.scripts.push("socket.io/socket.io.js");
         [
-            "js/libs/underscore/underscore-1.3.3.js",
-            "js/libs/jquery/jquery-1.8.1.js",
-            "js/libs/backbone/backbone-0.9.2.js",
-            "js/bootstrap-collapse.js",
-            "js/bootstrap-dropdown.js",
+            "js/libs/underscore/underscore-1.4.4.js",
+            "js/libs/jquery/jquery-1.9.1.js",
+            "js/libs/backbone/backbone-0.9.10.js",
             "js/app-utils.js",
             "js/app-starter.js",
             "js/app-store.js",
             "js/app-middle.js",
             "js/app-backbone.js",
-            "js/app-container.js",
-            "js/app-menu.js"
+            "js/app-container.js"
         ].forEach(function (dir) {
                 defaults.trailingScripts.push(dir);
             });
@@ -49,7 +45,6 @@
                 defaults.metas.push(meta);
             });
         [
-            bootstrap,
             pubdir
         ].forEach(function (dir) {
                 defaults["public"].unshift(dir);
@@ -57,15 +52,12 @@
         defaults.htmlFiles = [
             path.join(templates, "container.html")
         ];
-        defaults.templateFiles = [
-            path.join(templates, "menu.html")
-        ];
-        [
-            "img/glyphicons-halflings.png",
-            "img/glyphicons-halflings-white.png"
-        ].forEach(function (file) {
-                defaults.manifest.push(file);
-            });
+//        [
+//            "img/glyphicons-halflings.png",
+//            "img/glyphicons-halflings-white.png"
+//        ].forEach(function (file) {
+//                defaults.manifest.push(file);
+//            });
         defaults.links.push({
             rel:"apple-touch-startup-image",
             href:"startup.png"

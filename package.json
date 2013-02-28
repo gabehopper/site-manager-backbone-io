@@ -8,13 +8,12 @@
         "Gabe Hopper <gabe@jolira.com>"
     ],
     "repository":{
-        "url":"https://github.com/jolira/site-manager-baseline.git",
+        "url":"https://github.com/jolira/site-manager-backbone-io.git",
         "type":"git"
     },
     "dependencies":{
         "socket.io": "*",
-        "handlebars": "*",
-        "jolira-bootstrap" : "*"
+        "handlebars": "*"
     },
     "devDependencies":{
         "site-manager": "git://github.com/jolira/site-manager.git",
@@ -30,7 +29,7 @@
     },
     "bugs":{
         "mail":"dev@jolira.com",
-        "url":"http://github.com/jolira/site-manager-baseline/issues"
+        "url":"http://github.com/jolira/site-manager-backbone-io/issues"
     },
     "main":"index",
     "engines":{

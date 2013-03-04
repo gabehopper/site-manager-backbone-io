@@ -13,6 +13,7 @@
     },
     "dependencies":{
         "socket.io": "*",
+        "socket.io-client": "*",
         "handlebars": "*"
     },
     "devDependencies":{

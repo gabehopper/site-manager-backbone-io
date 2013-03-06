@@ -36,7 +36,7 @@
                     current.close();
                 }
 
-                args.push(function (err, view) {
+                args.push(function (err, view, cb) {
                     if (err) {
                         return app.error(err);
                     }
@@ -48,6 +48,9 @@
 
                     existing.$el.replaceWith(rendered.el);
 
+                    if (cb) {
+                        cb.call(undefined, view);
+                    }
                 });
 
                 creator.apply(this, args);

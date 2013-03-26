@@ -25,19 +25,19 @@
         if(this.key) {
             socket.emit('publish', {
                 method: method,
-                logic: this.key
+                logic: this.logic
             }, model, cb);
         }
     };
-    Backbone.Collection.prototype.register = function(key) {
-        this.key = key;
+    Backbone.Collection.prototype.register = function(logic) {
+        this.logic = logic;
     };
 
     Backbone.Collection.prototype.publish = function(socket, method, collection, cb) {
-        if(this.key) {
+        if(this.logic) {
             socket.emit('publish', {
                 method: method,
-                logic: this.key
+                logic: this.logic
             }, collection, cb);
         }
     };

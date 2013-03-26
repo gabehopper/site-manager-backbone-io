@@ -22,7 +22,7 @@
     };
 
     Backbone.Model.prototype.publish = function(socket, method, model, cb) {
-        if(this.key) {
+        if(this.logic) {
             socket.emit('publish', {
                 method: method,
                 logic: this.logic

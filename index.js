@@ -20,7 +20,8 @@
             "js/app-store.js",
             "js/app-middle.js",
             "js/app-backbone.js",
-            "js/app-container.js"
+            "js/app-container.js",
+            "js/app-async.js"
         ].forEach(function (dir) {
                 defaults.trailingScripts.push(dir);
             });

@@ -12,9 +12,9 @@
         "type":"git"
     },
     "dependencies":{
-        "socket.io": "*",
-        "socket.io-client": "*",
-        "handlebars": "*"
+        "socket.io": "0.9.13",
+        "socket.io-client": "0.9.11",
+        "handlebars": "1.0.6-2"
     },
     "devDependencies":{
         "site-manager": "git://github.com/jolira/site-manager.git",

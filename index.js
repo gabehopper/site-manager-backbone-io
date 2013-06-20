@@ -14,7 +14,7 @@
         [
             "js/libs/underscore/underscore-1.4.4.js",
             "js/libs/jquery/jquery-1.9.1.js",
-            "js/libs/backbone/backbone-0.9.10.js",
+            "js/libs/backbone/backbone-1.0.0.js",
             "js/app-utils.js",
             "js/app-starter.js",
             "js/app-store.js",

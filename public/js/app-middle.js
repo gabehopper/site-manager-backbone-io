@@ -103,11 +103,9 @@
                 tryAgain();
             });
             socket.on('reconnect', function () {
-                app.middle.trigger("reconnect", app.middle.id);
                 return app.log("middle reconnect");
             });
             socket.on('reconnecting', function () {
-                app.middle.trigger("reconnecting", app.middle.id);
                 return app.log("middle reconnecting");
             });
             socket.on('connect', function () {

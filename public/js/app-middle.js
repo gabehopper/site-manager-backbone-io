@@ -64,6 +64,7 @@
             return cb(io.connect(url, {
                 "reconnection limit":4001, // four second max delay
                 "max reconnection attempts":Infinity,
+                "match origin protocol": true,
                 "force new connection":true
             }));
         }

@@ -1,5 +1,5 @@
 (function (window, io, $, _, Backbone, location, app) {
-    "use strict";
+//    "use strict";
 
     var ID = "id",
         watchedEvents = {};
@@ -33,8 +33,10 @@
         var logToServer = false;
         if('error' === loggingLevel === level) {
             logToServer = true;
+            console.error.apply(console, _args);
         } else if ('debug' === loggingLevel) {
             logToServer = true;
+            console.log.apply(console, _args);
         }
 
         if(logToServer) {
@@ -47,7 +49,6 @@
 
             _.each(args, function (arg) {
                 var param = convert(arg);
-
                 params.push(param);
             });
 
@@ -127,6 +128,7 @@
                     version:device.version,
                     cordova:device.cordova
                 }, function(err, result) {
+
                     app.log = function () {
                         return log(socket, "info", result.loggingLevel, arguments);
                     };

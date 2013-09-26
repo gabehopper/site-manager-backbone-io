@@ -1,5 +1,5 @@
 (function (window, io, $, _, Backbone, location, app) {
-    "use strict";
+//    "use strict";
 
     var ID = "id",
         watchedEvents = {};
@@ -28,21 +28,32 @@
         }
     }
 
-    function log(socket, level, _args) {
-        var args = Array.prototype.slice.call(_args),
-            params = [
-                "log",
-                level,
-                new Date()
-            ];
+    function log(socket, level, loggingLevel, _args) {
 
-        _.each(args, function (arg) {
-            var param = convert(arg);
+        var logToServer = false;
+        if('error' === loggingLevel === level) {
+            logToServer = true;
+            console.error.apply(console, _args);
+        } else if ('debug' === loggingLevel) {
+            logToServer = true;
+            console.log.apply(console, _args);
+        }
 
-            params.push(param);
-        });
+        if(logToServer) {
+            var args = Array.prototype.slice.call(_args),
+                params = [
+                    "log",
+                    level,
+                    new Date()
+                ];
 
-        return socket.emit.apply(socket, params);
+            _.each(args, function (arg) {
+                var param = convert(arg);
+                params.push(param);
+            });
+
+            return socket.emit.apply(socket, params);
+        }
     }
 
     function emitter(socket) {
@@ -116,21 +127,24 @@
                     platform:device.platform,
                     version:device.version,
                     cordova:device.cordova
+                }, function(err, result) {
+
+                    app.log = function () {
+                        return log(socket, "info", result.loggingLevel, arguments);
+                    };
+                    app.debug = function () {
+                        return log(socket, "debug", result.loggingLevel, arguments);
+                    };
+                    app.error = function () {
+                        return log(socket, "error", result.loggingLevel, arguments);
+                    };
+
+                    app.log("middle connected");
+
+                    return _cb && _cb(socket);
                 });
 
-                app.log = function () {
-                    return log(socket, "info", arguments);
-                };
-                app.debug = function () {
-                    return log(socket, "debug", arguments);
-                };
-                app.error = function () {
-                    return log(socket, "error", arguments);
-                };
 
-                app.log("middle connected");
-
-                return _cb && _cb(socket);
             });
             socket.on('disconnect', function () {
                 app.middle.connected = false;

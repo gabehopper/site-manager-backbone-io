@@ -53,12 +53,7 @@
         defaults.htmlFiles = [
             path.join(templates, "container.html")
         ];
-//        [
-//            "img/glyphicons-halflings.png",
-//            "img/glyphicons-halflings-white.png"
-//        ].forEach(function (file) {
-//                defaults.manifest.push(file);
-//            });
+
         defaults.links.push({
             rel:"apple-touch-startup-image",
             href:"startup.png"

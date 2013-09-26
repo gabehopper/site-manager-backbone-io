@@ -158,7 +158,7 @@
                     store.save(ID, app.middle.id);
                 }
 
-                return openSocket(function (socket) {
+                var bindSocketListeners = function(socket) {
                     app.middle.bind = app.middle.on = app.middle.on || function (event, callback, context) {
                         var events = event.split(/\s+/);
 
@@ -183,8 +183,28 @@
                     app.middle.trigger = app.middle.trigger = app.middle.trigger || function () {
                         Backbone.Events.trigger.apply(app.middle, arguments);
                     };
-                    app.middle.emit = emitter(socket);
 
+                    app.middle.stop = function() {
+                        console.log("disconnect");
+                        socket.disconnect();
+                    };
+
+                    app.middle.restart = function() {
+                        console.log("restart");
+                        if(socket) {
+                            socket.connect();
+                        } else {
+                            openSocket(function (socket) {
+                                bindSocketListeners(socket);
+                            });
+                        }
+                    };
+
+                    app.middle.emit = emitter(socket);
+                };
+
+                return openSocket(function (socket) {
+                    bindSocketListeners(socket);
                     return next();
                 });
             });

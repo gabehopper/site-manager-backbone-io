@@ -22,7 +22,9 @@
         "horaa":"*",
         "vows":"*",
         "jake":"*",
-        "uglify-js":"*"
+        "uglify-js":"*",
+        "socket.io-mongo": "*",
+        "mong.socket.io": "*"
     },
     "scripts":{
         "test":"jake test",

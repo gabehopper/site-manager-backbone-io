@@ -116,7 +116,8 @@
                 app.middle.connected = true;
 
                 var _cb = cb,
-                    device = window.device || {};
+                    device = window.device || {},
+                    userAgent = navigator.userAgent || {};
 
                 cb = undefined;
 
@@ -126,7 +127,8 @@
                     name:device.name,
                     platform:device.platform,
                     version:device.version,
-                    cordova:device.cordova
+                    cordova:device.cordova,
+                    userAgent: userAgent
                 }, function(err, result) {
 
                     app.log = function () {

@@ -15,7 +15,7 @@
         "socket.io": "0.9.16",
         "socket.io-client": "0.9.16",
         "handlebars": "1.0.6-2",
-        "mong.socket.io": "*"
+        "socket.io-mongo": "*"
     },
     "devDependencies":{
         "site-manager": "git://github.com/jolira/site-manager.git",

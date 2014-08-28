@@ -1,5 +1,5 @@
 /*global PhoneGap:false, require:false */
-(function ($, _, app) {
+(function (_, app) {
     "use strict";
     app.async = app.async || {};
 
@@ -18,4 +18,4 @@
         });
     };
 
-})($, _, window["jolira-app"]);
+})(_, window["jolira-app"]);

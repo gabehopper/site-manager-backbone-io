@@ -64,7 +64,8 @@
 
     function connect(url, cb) {
         try {
-            return cb(io.connect(url, {
+            return cb(io.connect(
+                url, {
                 "reconnection limit":4001, // four second max delay
                 "max reconnection attempts":Infinity,
                 "match origin protocol": true,

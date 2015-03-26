@@ -77,7 +77,8 @@
                 "reconnection limit":4001, // four second max delay
                 "max reconnection attempts":Infinity,
                 "match origin protocol": true,
-                "force new connection":true
+                "force new connection":true,
+                "secure": SECURE
             }));
         }
         catch (e) {

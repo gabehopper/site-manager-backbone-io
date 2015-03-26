@@ -2,14 +2,15 @@
 //    "use strict";
 
     var ID = "id",
-        SECURE = true,
+        SECURE = "{{secure}}" == "true",
+        PORT = "{{port}}",
         watchedEvents = {};
 
     app.middle = app.middle || {};
 
     function getServerURL() {
         var protocol = SECURE ? "https://" : "http://",
-            port = location.port;
+            port = PORT || location.port;
 
         if (port) {
             port = ":" + port;

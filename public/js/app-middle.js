@@ -2,13 +2,20 @@
 //    "use strict";
 
     var ID = "id",
+        SECURE = true,
         watchedEvents = {};
 
     app.middle = app.middle || {};
 
     function getServerURL() {
-        //For now, we are assuming that socket.io is hosted locally.
-        return "";
+        var protocol = SECURE ? "https://" : "http://",
+            port = location.port;
+
+        if (port) {
+            port = ":" + port;
+        }
+
+        return protocol + location.hostname + port;
     }
 
     function convert(arg) {

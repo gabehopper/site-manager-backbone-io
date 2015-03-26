@@ -2,7 +2,7 @@
 //    "use strict";
 
     var ID = "id",
-        SECURE = "{{secure}}" == "true",
+        SECURE = "{{secureClient}}" == "true",
         PORT = "{{port}}",
         watchedEvents = {};
 

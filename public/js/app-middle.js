@@ -16,7 +16,7 @@
             port = ":" + port;
         }
 
-        return protocol + location.hostname + port;
+        return protocol + location.hostname;
     }
 
     function convert(arg) {

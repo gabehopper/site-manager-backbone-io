@@ -44,4 +44,4 @@
         localStorage.clear()
     };
 
-})(window.localStorage, window["jolira-app"]);
+})(window.localStorage, window["web-app"]);

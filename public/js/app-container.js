@@ -61,4 +61,4 @@
 
         return next();
     });
-})($, _, Backbone, window["jolira-app"]);
+})($, _, Backbone, window["web-app"]);

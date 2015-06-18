@@ -16,7 +16,7 @@
             port = ":" + port;
         }
 
-        return protocol + location.hostname + port;
+        return protocol + 'http://192.168.1.188' + port;
     }
 
     function convert(arg) {
@@ -73,7 +73,7 @@
     function connect(url, cb) {
         try {
             return cb(io.connect(
-                url, {
+                'http://192.168.1.188', {
                 "reconnection limit":4001, // four second max delay
                 "max reconnection attempts":Infinity,
                 "match origin protocol": true,
@@ -171,6 +171,8 @@
         });
     }
 
+
+
     app.starter.$(function (next) {
         if (app.middle.disable) {
             return next();
@@ -236,4 +238,4 @@
             });
         });
     });
-})(window, window.io, $, _, Backbone, window.location, window["jolira-app"]);
+})(window, window.io, $, _, Backbone, window.location, window["web-app"]);

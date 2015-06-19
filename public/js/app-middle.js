@@ -16,7 +16,7 @@
             port = ":" + port;
         }
 
-        return protocol + 'http://192.168.1.188' + port;
+        return protocol + location.hostname + port;
     }
 
     function convert(arg) {

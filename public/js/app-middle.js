@@ -73,7 +73,7 @@
     function connect(url, cb) {
         try {
             return cb(io.connect(
-                'http://192.168.1.188', {
+                url, {
                 "reconnection limit":4001, // four second max delay
                 "max reconnection attempts":Infinity,
                 "match origin protocol": true,

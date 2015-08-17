@@ -22,7 +22,7 @@
     "devDependencies":{
         "site-manager": "git://github.com/jolira/site-manager.git",
         "debug":"*",
-        "horaa":"*",
+        "horaa":"0.1.2alpha",
         "vows":"*",
         "jake":"*",
         "uglify-js":"*"

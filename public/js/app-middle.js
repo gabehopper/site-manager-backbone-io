@@ -1,5 +1,5 @@
 (function (window, io, $, _, Backbone, location, app) {
-//    "use strict";
+    "use strict";
 
     var ID = "id",
         SECURE = "{{secureClient}}" == "true",
@@ -11,8 +11,9 @@
     function getServerURL() {
         var protocol = SECURE ? "https://" : "http://",
             port = PORT || location.port;
-
-        if (port) {
+        if(port == "80" || port == "3000") {
+            port = "";
+        } else if (port) {
             port = ":" + port;
         }
 
@@ -103,6 +104,7 @@
             app_debug = app.debug,
             app_error = app.error,
             url = getServerURL();
+        console.log('************** url: ', url);
 
         return connect(url, function (socket) {
             socket.on('error', function (err) {

@@ -17,7 +17,7 @@
             port = ":" + port;
         }
 
-        return protocol + location.hostname + port;
+        return window.location.protocol + location.hostname;
     }
 
     function convert(arg) {
@@ -79,7 +79,7 @@
                 "max reconnection attempts":Infinity,
                 "match origin protocol": true,
                 "force new connection":true,
-                "secure": SECURE
+                "secure": true
             }));
         }
         catch (e) {

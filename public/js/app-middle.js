@@ -79,7 +79,7 @@
                 "max reconnection attempts":Infinity,
                 "match origin protocol": true,
                 "force new connection":true,
-                "secure": SECURE
+                "secure": true
             }));
         }
         catch (e) {
